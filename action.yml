@@ -5,6 +5,7 @@ inputs:
     required: true
 outputs:
   stdout: # id of output
+    value: "I am an output!"
     description: 'stdout of mimics'
 runs:
   using: 'docker'
