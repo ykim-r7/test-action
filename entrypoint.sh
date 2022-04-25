@@ -1,5 +1,4 @@
 #!/bin/sh -l
 
-ls
-mimics --help
+env
 
