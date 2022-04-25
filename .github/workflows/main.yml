@@ -12,6 +12,6 @@ jobs:
         uses: ykim-r7/test-action@latest
         id: mimics
         with:
-          api-key: ${{ secrets.api_key }}
+          api_key: ${{ secrets.api_key }}
       - name: Get the output 
         run: echo ${{ steps.mimics.outputs.stdout }}

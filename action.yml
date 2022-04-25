@@ -1,7 +1,7 @@
 # action.yml
 name: 'Mimics Scan'
 inputs:
-  blah-key:  # id of input
+  api_key:  # id of input
     required: true
 outputs:
   stdout: # id of output
@@ -11,4 +11,4 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.blah-key }}
+    - ${{ inputs.api_key }}
