@@ -5,7 +5,7 @@ inputs:
     required: true
 outputs:
   stdout: # id of output
-  description: 'stdout of mimics'
+    description: 'stdout of mimics'
 runs:
   using: 'docker'
   image: 'Dockerfile'
