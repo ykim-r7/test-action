@@ -14,4 +14,4 @@ jobs:
         with:
           api_key: ${{ secrets.api_key }}
       - name: debug
-        run: echo ${{ secrets.api_key }}
+        run: echo ${{ steps.mimics.outputs.stdout }}
