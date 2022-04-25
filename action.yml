@@ -1,16 +1,12 @@
 # action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Mimics Scan'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  api-key:  # id of input
     required: true
-    default: 'World'
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  stdout: # id of output
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.api-key }}
