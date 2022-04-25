@@ -13,5 +13,5 @@ jobs:
         id: mimics
         with:
           api_key: ${{ secrets.api_key }}
-      - name: Get the output 
-        run: echo ${{ secrets.api_key }}
+      - name: debug
+        run: env
