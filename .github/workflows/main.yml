@@ -14,4 +14,4 @@ jobs:
         with:
           api_key: ${{ secrets.api_key }}
       - name: debug
-        run: env
+        run: echo "$INPUT_BLAH_KEY"
