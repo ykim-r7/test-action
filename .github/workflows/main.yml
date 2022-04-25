@@ -14,6 +14,8 @@ jobs:
     name: A job to scan with mimics
     steps:
       - name: mimics step
+        env:
+          INPUT_API-KEY: "did i work?"
         uses: ykim-r7/test-action@latest
         id: mimics
         with:
