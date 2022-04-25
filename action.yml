@@ -1,7 +1,7 @@
 # action.yml
 name: 'Mimics Scan'
 inputs:
-  api-key:  # id of input
+  blah-key:  # id of input
     required: true
 outputs:
   stdout: # id of output
