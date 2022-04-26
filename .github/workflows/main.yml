@@ -19,7 +19,7 @@ jobs:
         id: mimics
         with:
           api_key: ${{ secrets.api_key }}
-          entrypoint: entrypoint.sh
+          entrypoint: /entrypoint.sh
           args: --help
 
       - name: Archive Scan Results
