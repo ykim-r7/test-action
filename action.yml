@@ -7,4 +7,4 @@ inputs:
     required: false
 runs:
   using: 'docker'
-  image: "Dockerfile"
+  image: 'public.ecr.aws/divvycloud/mimics:latest'
