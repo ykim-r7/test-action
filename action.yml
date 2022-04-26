@@ -19,7 +19,7 @@ runs:
   args:
     - scan
       example.yml
-      -c Storage Container Without Server Side Encryption Enabled
+      -c \"Storage Container Without Server Side Encryption Enabled\"
       # -s "Github Actions Demo"
       # --report-formats all
       # --no-progress
