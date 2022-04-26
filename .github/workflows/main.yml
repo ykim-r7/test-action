@@ -17,9 +17,3 @@ jobs:
         with:
           api_key: ${{ secrets.api_key }}
 
-      - name: Archive Scan Results
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: scan-results
-          path: reports/
