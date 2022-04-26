@@ -13,8 +13,8 @@ outputs:
 runs:
   using: 'docker'
   image: "Dockerfile"
-  args: >
-      scan
+  args:
+    - scan
       example.yml
       --base-url ${{ inputs.base_url }}
       --api-key ${{ inputs.api_key }}
