@@ -1,8 +1,5 @@
 # action.yml
 name: 'Mimics Scan'
-env:
-    MIMICS_BASE_URL: ${{ secrets.BASE_URL }}
-    MIMICS_API_KEY: ${{ secrets.API_KEY }}
 inputs:
   base_url:
     required: true
@@ -16,6 +13,9 @@ outputs:
 runs:
   using: 'docker'
   image: "Dockerfile"
+  env:
+    MIMICS_BASE_URL: ${{ inputs.BASE_URL }}
+    MIMICS_API_KEY: ${{ inputs.API_KEY }}
   args:
     - scan
       example.yml
