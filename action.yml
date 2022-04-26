@@ -3,8 +3,6 @@ name: 'Mimics Scan'
 inputs:
   api_key:  # id of input
     required: true
-  entryPoint:
-    default: "entrypoint.sh"
 runs:
   using: 'docker'
   image: "Dockerfile"
