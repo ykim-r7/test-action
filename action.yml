@@ -3,6 +3,8 @@ name: 'Mimics Scan'
 inputs:
   api_key:  # id of input
     required: true
+  args:
+    required: false
 runs:
   using: 'docker'
   image: "Dockerfile"
