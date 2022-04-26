@@ -13,11 +13,12 @@ outputs:
 runs:
   using: 'docker'
   image: "Dockerfile"
+  env:
+    MIMICS_BASE_URL=${{ secrets.BASE_URL }}
+    MIMICS_API_KEY=${{ secrets.API_KEY }}
   args:
     - scan
       example.yml
-      --base-url ${{ inputs.base_url }}
-      --api-key ${{ inputs.api_key }}
       -c "Storage Container Without Server Side Encryption Enabled"
       -s "Github Actions Demo"
       --report-formats all
