@@ -10,5 +10,10 @@ echo "$3"
 echo "hi"
 
 stdout=$(mimics $*)
-echo $stdout
+# echo $stdout
+echo "::set-output name=stdout::$stdout"
+echo "::set-output name=stdout::$stdout"
+echo "::set-output name=stdout::$stdout"
+echo "::set-output name=stdout::$stdout"
+echo "::set-output name=stdout::$stdout"
 echo "::set-output name=stdout::$stdout"
