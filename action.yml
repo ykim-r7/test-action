@@ -11,3 +11,5 @@ outputs:
 runs:
   using: 'docker'
   image: "Dockerfile"
+  args:
+    - --api-key ${{ inputs.api_key }}
