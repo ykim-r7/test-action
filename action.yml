@@ -1,6 +1,8 @@
 # action.yml
 name: 'Mimics Scan'
 inputs:
+  base_url:
+    required: true
   api_key:  # id of input
     required: true
   args:
@@ -13,3 +15,10 @@ runs:
   image: "Dockerfile"
   args:
     - --api-key ${{ inputs.api_key }}
+    - --base-url ${{ inputs.base_url }}
+    - scan
+    - example.yml
+    - -c "Storage Container Without Server Side Encryption Enabled"
+    - -s "Github Actions Demo"
+    - --report-formats all
+    - --no-progress
