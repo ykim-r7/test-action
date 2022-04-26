@@ -16,6 +16,8 @@ jobs:
         id: mimics
         with:
           api_key: ${{ secrets.api_key }}
+      - name: debug
+        run: ls
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v2
         with:
