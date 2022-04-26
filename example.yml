@@ -1,0 +1,61 @@
+name: IaC Scan
+
+on:
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      # Environment variables for pulling the mimICS docker image
+      MIMICS: "public.ecr.aws/divvycloud/mimics:latest"
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Terraform CLI
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.1.8
+          terraform_wrapper: false
+
+      - name: Generate plan
+        env:
+          # Environment variables for terraform
+          ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+          ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+          ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+        run: |
+            terraform init
+            terraform plan -out=plan.tfplan
+            terraform show -json plan.tfplan > plan.json
+      - name: Get latest image
+        run: docker pull ${{ env.MIMICS }}
+
+      - name: Run scan
+        env:
+          # Environment variables for ICS instance
+          ICS_BASE_URL: https://sales-demo.divvycloud.com/
+        run: >
+            docker run
+            -v $(pwd):/data
+            -e MIMICS_BASE_URL=${{ env.ICS_BASE_URL }}
+            -e MIMICS_API_KEY=${{ secrets.ICS_API_KEY }}
+            ${{ env.MIMICS }} scan
+            data/plan.json
+            -c "Azure Checks"
+            -s "Github Actions Demo"
+            --report-formats all
+            --report-path "/data/reports"
+            --no-progress
+      - name: Archive Scan Results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: scan-results
+          path: reports/

@@ -3,12 +3,8 @@ name: 'Mimics Scan'
 inputs:
   api_key:  # id of input
     required: true
-outputs:
-  stdout: # id of output
-    value: "I am an output!"
-    description: 'stdout of mimics'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: "public.ecr.aws/divvycloud/mimics:latest"
   args:
     - ${{ inputs.api_key }}
