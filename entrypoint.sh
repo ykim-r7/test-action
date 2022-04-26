@@ -6,4 +6,4 @@ mimics version
 echo "$1 $2 $3 $4"
 ls
 cat $2
-mimics $1 $2 $3
+mimics $1 $2 $3 $4
