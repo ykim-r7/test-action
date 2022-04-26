@@ -5,6 +5,9 @@ inputs:
     required: true
   args:
     required: false
+outputs:
+  stdout:
+    description: "result of mimics command"
 runs:
   using: 'docker'
-  image: 'docker://public.ecr.aws/divvycloud/mimics:latest'
+  image: "Dockerfile"
