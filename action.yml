@@ -14,10 +14,10 @@ runs:
   using: 'docker'
   image: "Dockerfile"
   args:
-    - --api-key ${{ inputs.api_key }}
-    - --base-url ${{ inputs.base_url }}
     - scan
     - example.yml
+    - --base-url ${{ inputs.base_url }}
+    - --api-key ${{ inputs.api_key }}
     - -c "Storage Container Without Server Side Encryption Enabled"
     - -s "Github Actions Demo"
     - --report-formats all
