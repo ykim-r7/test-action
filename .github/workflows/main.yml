@@ -8,17 +8,17 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to scan with mimics
     steps:
-      - name: mimics step
-        env:
-          ICS_BASE_URL: https://sales-demo.divvycloud.com/
-        uses: ykim-r7/test-action@main
-        id: mimics
-        with:
-          api_key: ${{ secrets.api_key }}
-      - name: debug
-        run: ls -a
-      - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: example.sarif
-
+      - uses: actions/checkout@v2
+        - name: mimics step
+          env:
+            ICS_BASE_URL: https://sales-demo.divvycloud.com/
+          uses: ykim-r7/test-action@main
+          id: mimics
+          with:
+            api_key: ${{ secrets.api_key }}
+        - name: debug
+          run: ls -a
+        - name: Upload SARIF file
+          uses: github/codeql-action/upload-sarif@v2
+          with:
+            sarif_file: example.sarif
