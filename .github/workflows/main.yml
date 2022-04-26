@@ -7,9 +7,6 @@ jobs:
   mimics_scan_job:
     runs-on: ubuntu-latest
     name: A job to scan with mimics
-    env:
-      MIMICS: public.ecr.aws/divvycloud/mimics:latest
-
     steps:
       - name: mimics step
         env:
