@@ -12,7 +12,6 @@ jobs:
         uses: actions/checkout@v2
 
       - name: mimics step
-        env:
         uses: ykim-r7/test-action@main
         id: mimics
         with:
