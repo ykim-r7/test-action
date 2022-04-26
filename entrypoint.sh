@@ -9,7 +9,6 @@ echo "$2"
 echo "$3"
 echo "hi"
 
-mimics version
-# stdout=$(mimics $1)
-# echo $stdout
-# echo "::set-output name=stdout::$stdout"
+stdout=$(mimics $*)
+echo $stdout
+echo "::set-output name=stdout::$stdout"
