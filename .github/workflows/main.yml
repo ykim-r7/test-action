@@ -11,7 +11,6 @@ jobs:
       - name: mimics step
         env:
           ICS_BASE_URL: https://sales-demo.divvycloud.com/
-
         uses: ykim-r7/test-action@main
         id: mimics
         with:
