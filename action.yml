@@ -14,8 +14,8 @@ runs:
   using: 'docker'
   image: "Dockerfile"
   env:
-    MIMICS_BASE_URL=${{ secrets.BASE_URL }}
-    MIMICS_API_KEY=${{ secrets.API_KEY }}
+    MIMICS_BASE_URL: ${{ secrets.BASE_URL }}
+    MIMICS_API_KEY: ${{ secrets.API_KEY }}
   args:
     - scan
       example.yml
