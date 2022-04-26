@@ -16,7 +16,6 @@ jobs:
         id: mimics
         with:
           api_key: ${{ secrets.api_key }}
-          args: version
 
       - name: Archive Scan Results
         if: always()
