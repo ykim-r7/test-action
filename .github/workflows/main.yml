@@ -22,7 +22,7 @@ jobs:
     name: Uploading in separate job to ensure it happens
     steps:
       - name: debugg
-        runs: ls
+        run: ls
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v2
         with:
