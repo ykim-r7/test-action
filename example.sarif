@@ -32,7 +32,12 @@
           "locations": [
             {
               "physicalLocation": {
-                "uri": "hi"
+                "artifactLocation": {
+                  "uri": "example.yml"
+                },
+                "region": {
+                  "startLine": 2
+                }
               }
             }
           ]
