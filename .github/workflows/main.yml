@@ -17,7 +17,10 @@ jobs:
         with:
           api_key: ${{ secrets.api_key }}
           base_url: ${{ secrets.base_url }}
-
+  upload_sarif_job:
+    runs-on: ubuntu-latest
+    name: Uploading in separate job to ensure it happens
+    steps:
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v2
         with:
