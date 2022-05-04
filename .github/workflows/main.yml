@@ -17,10 +17,10 @@ jobs:
         uses: tj-actions/changed-files@v19
 
       - id: split-files
-        run: echo ${{ steps.changed-files.outputs.all_changed_and_modified_files }} | awk -F' ' '{print "\"[\\\""$1 "\\\", \\\"" $2"\\\"]\""}'
+        run: echo ::set-output name=targets::${{ steps.changed-files.outputs.all_changed_and_modified_files }} | awk -F' ' '{print "[\""$1 "\", \"" $2"\"]"}'
 
-      - id: set-targets
-        run: echo ${{ steps.split-files.outputs }}
+      # - id: set-targets
+      #   run: echo "::set-output name=targets::${{ steps.split-files.outputs }}"
 
   mimcs-scan:
     name: Scan and Upload
