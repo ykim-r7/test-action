@@ -5,5 +5,5 @@
 mimics version
 echo "$1 $2 $3 $4"
 sh -c "echo $*"
-cat $1
+echo $1
 sh -c "mimics $1 $2 $3 $4"
