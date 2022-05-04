@@ -20,7 +20,7 @@ runs:
     MIMICS_API_KEY: ${{ inputs.API_KEY }}
   args:
     - scan
-      ${{ input.target }}
+      ${{ inputs.target }}
       -c 'Storage Container Without Server Side Encryption Enabled'
       -s 'Github Actions Demo'
       --report-formats all
