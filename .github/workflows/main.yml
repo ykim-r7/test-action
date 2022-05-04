@@ -34,6 +34,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: debugg
+        run: echo ${{ steps.get_commit.outputs }}
+
       - name: Run mimICS
         uses: ykim-r7/test-action@main
         id: mimics
