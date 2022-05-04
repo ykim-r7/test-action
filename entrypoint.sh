@@ -5,5 +5,7 @@
 mimics version
 #echo "$1 $2 $3 $4"
 #sh -c "echo $*"
-echo $1
-#sh -c "mimics $1 $2 $3 $4"
+for target in $2
+do
+	sh -c "mimics scan target $*"
+done
