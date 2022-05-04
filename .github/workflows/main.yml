@@ -35,9 +35,9 @@ jobs:
 
       - name: debugg
         env:
-          COMMIT_OUTPUTS: ${{ fromJson(steps.get_commit.outputs.data) }}
+          COMMIT_OUTPUTS: ${{ toJson(steps.get_commit.outputs.data) }}
         run: |
-          echo nothing
+          echo $COMMIT_OUTPUTS
 
       - name: Run mimICS
         uses: ykim-r7/test-action@main
