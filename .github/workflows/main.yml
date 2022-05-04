@@ -17,14 +17,30 @@ jobs:
         id: changed-files
         uses: tj-actions/changed-files@v19
 
-      # - name: List all changed files
-      #   run: |
-      #     for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-      #       echo "$file was changed"
-      #     done
-  scan:
+      - name: List all changed files
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "$file was changed"
+          done
+
+  mimcs-scan:
+    name: Scan and Upload
     needs: get-targets
-    uses: ./.github/workflows/scan.yml
-    with:
-      targets: ${{ needs.get-targets.outputs.all_changed_files }}
-    secrets: inherit
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        target: ${{ needs.get-targets.outputs.all_changed_files }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run mimICS
+        uses: ykim-r7/test-action@main
+        id: mimics
+        with:
+          api_key: ${{ secrets.api_key }}
+          base_url: ${{ secrets.base_url }}
+          target: ${{ matrix.target }}
+      - name: Upload SARIF file
+        if: always()
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: example.sarif
