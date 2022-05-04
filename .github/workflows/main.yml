@@ -17,6 +17,7 @@ jobs:
         with:
           api_key: ${{ secrets.api_key }}
           base_url: ${{ secrets.base_url }}
+          target: $${{ github.event[0].added }}
       - name: debugg
         if: always()
         run: ls

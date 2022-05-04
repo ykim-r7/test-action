@@ -5,6 +5,8 @@ inputs:
     required: true
   api_key:  # id of input
     required: true
+  target:
+    required: true
   args:
     required: false
 outputs:
@@ -18,7 +20,7 @@ runs:
     MIMICS_API_KEY: ${{ inputs.API_KEY }}
   args:
     - scan
-      example.yml
+      $$ {{ input.target }}
       -c 'Storage Container Without Server Side Encryption Enabled'
       -s 'Github Actions Demo'
       --report-formats all
