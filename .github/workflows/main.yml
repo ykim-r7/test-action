@@ -21,7 +21,7 @@ jobs:
         with:
           api_key: ${{ secrets.api_key }}
           base_url: ${{ secrets.base_url }}
-          target: $${{join(github.event.push.commits.*.id, ' ')}}
+          target: $${{join(github.event.commits.*.id, ' ')}}
       - name: Upload SARIF file
         if: always()
         uses: github/codeql-action/upload-sarif@v2
