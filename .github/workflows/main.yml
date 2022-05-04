@@ -9,5 +9,5 @@ jobs:
       matrix:
         commit: ${{ github.event.commits.*.id }}
     uses: ./.github/workflows/changed-files.yml
-      with:
-        commit: ${{ matrix.commit }}
+    with:
+      commit: ${{ matrix.commit }}
