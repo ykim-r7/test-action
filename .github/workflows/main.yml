@@ -6,7 +6,7 @@ on:
 jobs:
   get-targets:
     outputs:
-      targets: ${{ steps.split-files.outputs }}
+      targets: ${{ fromJson(steps.split-files.outputs) }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
