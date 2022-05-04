@@ -23,3 +23,5 @@ jobs:
   
   scan:
     uses: ./.github/workflows/scan.yml
+    with:
+      targets: ${{ jobs.get-commits.steps.changed-files.outputs.all_changed_files }}
