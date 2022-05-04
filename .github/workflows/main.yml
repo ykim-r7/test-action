@@ -5,6 +5,8 @@ on:
 
 jobs:
   get-commits:
+    outputs:
+      all_changed_files: ${{ steps.changed-files.outputs.all_changed_files }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -20,8 +22,7 @@ jobs:
       #     for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
       #       echo "$file was changed"
       #     done
-  
   scan:
     uses: ./.github/workflows/scan.yml
     with:
-      targets: ${{ jobs.get-commits.steps.changed-files.outputs.all_changed_files }}
+      targets: ${{ jobs.outputs.all_changed_files }}
