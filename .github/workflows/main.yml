@@ -34,8 +34,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: debugg
-        env:
-          COMMIT_OUTPUTS: ${{ fromJson(steps.get_commit.outputs.data) }}
         run: |
           echo $COMMIT_OUTPUTS
 
