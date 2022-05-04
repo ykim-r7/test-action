@@ -6,7 +6,7 @@ on:
 jobs:
   get-targets:
     outputs:
-      all_changed_files: ${{ steps.split.outputs }}
+      targets: ${{ steps.set-output.outputs.targets }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -16,14 +16,15 @@ jobs:
       - id: changed-files
         uses: tj-actions/changed-files@v19
 
-      - id: split
-        uses: JungWinter/split@v2.0.0
-        with:
-          msg: ${{ steps.changed-files.outputs.all_changed_and_modified_files }}
+      - id: split-files
+        run: echo ${{ steps.changed-files.outputs.all_changed_and_modified_files }} | awk -F' ' '{print "[\""$1 "\", \"" $2"\"]"}'
+
+      - id: set-output
+        run: echo "::set-output name=targets::[]"
 
       - name: List all changed files
         run: |
-          for file in ${{ steps.changed-files.outputs }}; do
+          for file in ${{ steps.split-files.outputs }}; do
             echo "$file was changed"
           done
 
