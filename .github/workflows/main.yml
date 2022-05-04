@@ -18,7 +18,7 @@ jobs:
       - id: set-matrix
         run: echo "::set-output name=matrix::"$EVENT_CONTEXT
       - name: debugg
-        run: echo ${{ outputs.matrix }}
+        run: echo ${{ steps.set-matrix.outputs.matrix }}
 
   mimcs-scan:
     needs: get-changed-files
