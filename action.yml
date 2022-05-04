@@ -19,7 +19,6 @@ runs:
     MIMICS_BASE_URL: ${{ inputs.BASE_URL }}
     MIMICS_API_KEY: ${{ inputs.API_KEY }}
   args:
-    - scan
     - ${{ inputs.targets }}
     - -c 'Storage Container Without Server Side Encryption Enabled'
     - -s 'Github Actions Demo'
