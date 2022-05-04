@@ -4,17 +4,10 @@ on:
       - main
 
 jobs:
-  get-commits:
-    runs-on: ubuntu-latest
+  scan:
     strategy:
       matrix:
         commit: ${{ github.event.commits.*.id }}
-    steps:
-      - id: get-changed-files
-        uses: ./.github/workflows/changed-files.yml
-        with:
-          commit: ${{ matrix.commit }}
-
-      - uses: ./.github/workflows/scan.yml
-        with:
-          targets: ${{ steps.get-changed-files.outputs.changed-files }}
+    uses: ./.github/workflows/changed-files.yml
+      with:
+        commit: ${{ matrix.commit }}
