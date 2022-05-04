@@ -9,7 +9,8 @@ jobs:
     name: Scan and Upload
     runs-on: ubuntu-latest
     strategy:
-      target: ${{ inputs.targets }}
+      matrix:
+        target: ${{ inputs.targets }}
     steps:
       - uses: actions/checkout@v3
       - name: Run mimICS
