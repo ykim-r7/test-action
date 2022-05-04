@@ -15,8 +15,8 @@ jobs:
         run: |
           echo $EVENT_CONTEXT
       - uses: actions/checkout@v2
-        id: set-matrix
-      - run: echo "::set-output name=matrix::$EVENT_CONTEXT"
+      - id: set-matrix
+        run: echo "::set-output name=matrix::$EVENT_CONTEXT"
 
   mimcs_scan:
     runs-on: ubuntu-latest
