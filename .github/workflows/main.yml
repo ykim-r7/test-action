@@ -18,7 +18,7 @@ jobs:
       - id: set-matrix
         run: echo "::set-output name=matrix::"$EVENT_CONTEXT
       - name: debugg
-        run: echo ${{ needs.get-changed-files.outputs.matrix }}
+        run: echo ${{ outputs.matrix }}
 
   mimcs-scan:
     needs: get-changed-files
@@ -26,7 +26,7 @@ jobs:
     strategy:
       matrix:
         manifest: ${{ fromJson(needs.get-changed-files.outputs.matrix) }}
-
+    
     name: Scan and Upload
     steps:
       - name: Checkout
