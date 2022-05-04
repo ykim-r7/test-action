@@ -4,7 +4,7 @@ on:
       - main
 
 jobs:
-  get_changed_files:
+  get-changed-files:
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
@@ -16,10 +16,15 @@ jobs:
           echo $EVENT_CONTEXT
       - uses: actions/checkout@v2
       - id: set-matrix
-        run: echo "::set-output name=matrix::$EVENT_CONTEXT"
+        run: echo "::set-output name=matrix::"$EVENT_CONTEXT
 
-  mimcs_scan:
+  mimcs-scan:
+    needs: get-changed-files
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        manifest: ${{ fromJson(needs.get-changed-files.outputs.matrix) }}
+
     name: Scan and Upload
     steps:
       - name: Checkout
