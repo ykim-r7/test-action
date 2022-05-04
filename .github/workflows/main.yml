@@ -17,6 +17,8 @@ jobs:
       - uses: actions/checkout@v2
       - id: set-matrix
         run: echo "::set-output name=matrix::"$EVENT_CONTEXT
+      - name: debugg
+        run: echo ${{ needs.get-changed-files.outputs.matrix }}
 
   mimcs-scan:
     needs: get-changed-files
