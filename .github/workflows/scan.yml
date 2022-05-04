@@ -1,7 +1,7 @@
 on:
   workflow_call:
     inputs:
-      target:
+      targets:
         required: true
     secrets: inherit
 
@@ -9,6 +9,8 @@ jobs:
   mimcs-scan:
     name: Scan and Upload
     runs-on: ubuntu-latest
+    strategy:
+      target: ${{ inputs.targets }}
     steps:
       - uses: actions/checkout@v3
       - name: Run mimICS
@@ -17,7 +19,7 @@ jobs:
         with:
           api_key: ${{ secrets.api_key }}
           base_url: ${{ secrets.base_url }}
-          target: ${{ inputs.target }}
+          target: ${{ matrix.target }}
       - name: Upload SARIF file
         if: always()
         uses: github/codeql-action/upload-sarif@v2

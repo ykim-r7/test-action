@@ -4,12 +4,13 @@ on:
       - main
 
 jobs:
-  get-changed-files:
+  get-commits:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0  # OR "2" -> To retrieve the preceding commit.
+
       - name: Get changed files
         id: changed-files
         uses: tj-actions/changed-files@v19
@@ -19,9 +20,6 @@ jobs:
       #     for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
       #       echo "$file was changed"
       #     done
+  
   scan:
     uses: ./.github/workflows/scan.yml
-    strategy:
-      matrix:
-        target: ${{ steps.changed-files.outputs.all_changed_files }}
-
