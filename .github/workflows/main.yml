@@ -9,7 +9,7 @@ jobs:
     name: A job to scan with mimics
     steps:
       - env:
-          EVENT_CONTEXT: ${{ toJSON(github.event) }}
+          EVENT_CONTEXT: ${{ toJSON(github.event.push.commits) }}
         run: |
           echo $EVENT_CONTEXT
       - name: checkout
@@ -21,7 +21,7 @@ jobs:
         with:
           api_key: ${{ secrets.api_key }}
           base_url: ${{ secrets.base_url }}
-          target: $${{join(github.event.inputs.push.commits, ' ')}}
+          target: $${{join(github.event.push.commits.\*.id, ' ')}}
       - name: Upload SARIF file
         if: always()
         uses: github/codeql-action/upload-sarif@v2
