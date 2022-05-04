@@ -22,6 +22,6 @@ jobs:
   scan:
     runs-on: ubuntu-latest
     uses: ./.github/workflows/scan.yml
-      with:
-        targets: ${{ jobs.get-changed-files.outputs.targets }}
+    with:
+      targets: ${{ jobs.get-changed-files.outputs.targets }}
 
