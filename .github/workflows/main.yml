@@ -32,7 +32,7 @@ jobs:
         with:
           api_key: ${{ secrets.api_key }}
           base_url: ${{ secrets.base_url }}
-          targets: ${{ fromJson(needs.get-targets.outputs.targets) }}
+          targets: ${{ needs.get-targets.outputs.targets }}
       - name: Upload SARIF file
         if: always()
         uses: github/codeql-action/upload-sarif@v2
