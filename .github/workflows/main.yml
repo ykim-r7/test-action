@@ -20,7 +20,7 @@ jobs:
         run: echo ${{ steps.changed-files.outputs.all_changed_and_modified_files }} | awk -F' ' '{print "[\""$1 "\", \"" $2"\"]"}'
 
       - id: set-targets
-        run: echo "::set-output name=targets::${{ steps.split-files.outputs }}"
+        run: echo "::set-output name=targets::${{ fromJson(steps.split-files.outputs) }}"
 
   mimcs-scan:
     name: Scan and Upload
