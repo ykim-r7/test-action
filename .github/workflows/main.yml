@@ -31,7 +31,7 @@ jobs:
         id: get_commit
         with:
           route: GET /repos/{owner}/{repo}/commits/{ref}
-          owner: me
+          owner: ${{ github.repository_owner }}
           repo: ${{ github.repository }}
           ref: ${{ matrix.commit_id }}
         env:
