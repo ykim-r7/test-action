@@ -30,7 +30,7 @@ jobs:
       - uses: octokit/request-action@v2.x
         id: get_commit
         with:
-          route: GET /repos/${{ github.repository_owner }}/${{ github.repository }}/commits/${{ matrix.commit_id }}
+          route: GET /repos/${{ github.repository }}/commits/${{ matrix.commit_id }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
