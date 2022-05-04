@@ -4,7 +4,7 @@ on:
       - main
 
 jobs:
-  get-commits:
+  get-targets:
     outputs:
       all_changed_files: ${{ steps.changed-files.outputs.all_changed_files }}
     runs-on: ubuntu-latest
@@ -23,6 +23,7 @@ jobs:
       #       echo "$file was changed"
       #     done
   scan:
+    needs: get-targets
     uses: ./.github/workflows/scan.yml
     with:
-      targets: ${{ jobs.get-commits.outputs.all_changed_files }}
+      targets: ${{ needs.get-targets.outputs.all_changed_files }}
