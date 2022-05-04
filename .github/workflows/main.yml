@@ -20,7 +20,7 @@ jobs:
           target: $${{join(github.event.inputs.push.commits, ' ')}}
       - name: debugg
         if: always()
-        run: echo $${{join(github.event.inputs.push.commits, ' ')}}
+        run: echo $${{ github.event }}
       - name: Upload SARIF file
         if: always()
         uses: github/codeql-action/upload-sarif@v2
