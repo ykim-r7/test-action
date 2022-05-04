@@ -4,24 +4,35 @@ on:
       - main
 
 jobs:
-  mimics_scan_job:
+  get_changed_files:
     runs-on: ubuntu-latest
-    name: A job to scan with mimics
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    name: Collect Changed Files
     steps:
       - env:
           EVENT_CONTEXT: ${{ toJson(github.event.commits.*.id) }}
         run: |
           echo $EVENT_CONTEXT
-      - name: checkout
+      - uses: actions/checkout@v2
+        id: set-matrix
+        run: echo "::set-output name=matrix::$EVENT_CONTEXT"
+
+  mimcs_scan:
+    runs-on: ubuntu-latest
+    name: Scan and Upload
+    steps:
+      - name: Checkout
         uses: actions/checkout@v2
 
-      - name: mimics step
+      - name: Run mimICS
         uses: ykim-r7/test-action@main
         id: mimics
         with:
           api_key: ${{ secrets.api_key }}
           base_url: ${{ secrets.base_url }}
           target: $${{join(github.event.commits.*.id, ' ')}}
+
       - name: Upload SARIF file
         if: always()
         uses: github/codeql-action/upload-sarif@v2
