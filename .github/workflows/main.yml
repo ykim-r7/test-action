@@ -6,7 +6,7 @@ on:
 jobs:
   get-targets:
     outputs:
-      targets: ${{ steps.set-output.outputs.targets }}
+      targets: ${{ steps.set-targets.outputs.targets }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -19,14 +19,8 @@ jobs:
       - id: split-files
         run: echo ${{ steps.changed-files.outputs.all_changed_and_modified_files }} | awk -F' ' '{print "[\""$1 "\", \"" $2"\"]"}'
 
-      - id: set-output
-        run: echo "::set-output name=targets::${{ fromJson(steps.split-files.outputs) }}"
-
-      - name: List all changed files
-        run: |
-          for file in ${{ steps.split-files.outputs }}; do
-            echo "$file was changed"
-          done
+      - id: set-targets
+        run: echo "::set-output name=targets::${{ steps.split-files.outputs }}"
 
   mimcs-scan:
     name: Scan and Upload
