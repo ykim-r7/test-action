@@ -19,8 +19,10 @@ jobs:
           base_url: ${{ secrets.base_url }}
           target: $${{join(github.event.inputs.push.commits, ' ')}}
       - name: debugg
-        if: always()
-        run: echo $${{ github.event }}
+      - env:
+          EVENT_CONTEXT: ${{ toJSON(github.event) }}
+        run: |
+          echo $EVENT_CONTEXT
       - name: Upload SARIF file
         if: always()
         uses: github/codeql-action/upload-sarif@v2
