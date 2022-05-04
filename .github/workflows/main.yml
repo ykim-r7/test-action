@@ -4,10 +4,14 @@ on:
       - main
 
 jobs:
-  scan:
-    strategy:
-      matrix:
-        commit: ${{ github.event.commits.*.id }}
-    uses: ./.github/workflows/changed-files.yml
-    with:
-      commit: ${{ matrix.commit }}
+  get-commits:
+    steps:
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v19
+
+      - name: List all changed files
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "$file was changed"
+          done
