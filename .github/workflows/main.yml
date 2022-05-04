@@ -16,7 +16,7 @@ jobs:
           echo $EVENT_CONTEXT
       - uses: actions/checkout@v2
       - id: set-matrix
-        run: echo "::set-output name=matrix::$(echo EVENT_CONTEXT)"
+        run: echo "::set-output name=matrix::${{ toJson(github.event.commits.*.id) }}"
       - name: debugg
         run: echo ${{ steps.set-matrix.outputs.matrix }}
 
