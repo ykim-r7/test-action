@@ -27,3 +27,4 @@ jobs:
     uses: ./.github/workflows/scan.yml
     with:
       targets: ${{ needs.get-targets.outputs.all_changed_files }}
+    secrets: inherit

@@ -3,7 +3,6 @@ on:
     inputs:
       targets:
         required: true
-    secrets: inherit
 
 jobs:
   mimcs-scan:
