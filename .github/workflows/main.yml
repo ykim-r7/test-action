@@ -34,8 +34,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: debugg
-        run: echo ${{ toJson(steps.get_commit.outputs) }}
+      - env:
+          COMMIT_OUTPUTS: ${{ toJson(steps.get_commit.outputs) }}
+        run: |
+          echo $COMMIT_OUTPUTS
 
       - name: Run mimICS
         uses: ykim-r7/test-action@main
