@@ -4,6 +4,7 @@
 # or splits `args` in a string separated by whitespace.
 mimics version
 #sh -c "echo $*"
+echo $1
 for target in $1
 do
 	echo $target
