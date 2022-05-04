@@ -45,7 +45,7 @@ jobs:
         with:
           api_key: ${{ secrets.api_key }}
           base_url: ${{ secrets.base_url }}
-          target: ${{ steps.get_commit.outputs.files }}
+          target: ${{ steps.get_commit.outputs.files[0].filename }}
 
       - name: Upload SARIF file
         if: always()
