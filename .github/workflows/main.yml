@@ -6,7 +6,7 @@ on:
 jobs:
   get-targets:
     outputs:
-      targets: ${{ fromJson(steps.split-files.outputs) }}
+      targets: ${{ steps.split-files.outputs }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        target: ${{ needs.get-targets.outputs.targets }}
+        target: ${{ fromJson(needs.get-targets.outputs.targets) }}
     steps:
       - uses: actions/checkout@v3
       - name: Run mimICS
