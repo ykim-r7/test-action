@@ -35,7 +35,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - env:
-          COMMIT_OUTPUTS: ${{ toJson(steps.get_commit.outputs) }}
+          COMMIT_OUTPUTS: ${{ toJson(steps.get_commit.outputs.data) }}
         run: |
           echo $COMMIT_OUTPUTS
 
