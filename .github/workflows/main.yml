@@ -35,7 +35,7 @@ jobs:
 
       - name: debugg
         env:
-          COMMIT_OUTPUTS: ${{ toJson(steps.get_commit.outputs.data) }}
+          COMMIT_OUTPUTS: ${{ steps.get_commit.outputs.data.sha }}
         run: |
           echo $COMMIT_OUTPUTS
 
