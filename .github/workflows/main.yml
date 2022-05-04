@@ -9,7 +9,7 @@ jobs:
     name: A job to scan with mimics
     steps:
       - env:
-          EVENT_CONTEXT: ${{ join(github.event.push.commits, ' ') }}
+          EVENT_CONTEXT: ${{ github.event.push.commits }}
         run: |
           echo $EVENT_CONTEXT
       - name: checkout
