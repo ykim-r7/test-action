@@ -25,4 +25,4 @@ jobs:
   scan:
     uses: ./.github/workflows/scan.yml
     with:
-      targets: ${{ jobs.outputs.all_changed_files }}
+      targets: ${{ get-commits.outputs.all_changed_files }}
