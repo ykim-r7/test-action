@@ -10,7 +10,7 @@ Outputs:
     Value: !Select 
         - 0
         - Fn::Cidr: 
-          - 11.0.0.0/15
+          - 11.0.0.0/14
           - 3
           - 8
 
