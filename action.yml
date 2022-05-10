@@ -22,5 +22,5 @@ runs:
     - ${{ inputs.targets }}
     - -c 'Storage Container Without Server Side Encryption Enabled'
     - -s 'Github Actions Demo'
-    - --report-formats all
+    - --report-formats sarif
     - --no-progress
