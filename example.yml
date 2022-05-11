@@ -1,10 +1,7 @@
 AWSTemplateFormatVersion: 2010-09-09
 
-
-
-
 Resources:
-  FindMeAtLine7:
+  WhatTheBucket:
     Type: AWS::S3::Bucket
 
 Outputs:
