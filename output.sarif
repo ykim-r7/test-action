@@ -60,7 +60,7 @@
 						{
 							"physicalLocation": {
 								"artifactLocation": {
-									"uri": "test/cidr1.yaml"
+									"uri": "test/cidr_one.yaml"
 								},
 								"region": {
 									"startLine": 3,
@@ -72,11 +72,11 @@
 						}
 					],
 					"partialFingerprints": {
-						"Document": "d0de5b9326cc0b56f207db2d0eae7ae622ef9077b02f3840e953c6d0c4839cad",
+						"Document": "81fc9c792a901d6276ac2f454457dcdf4b9c514b47c3b6cd3affbaa33310ae70",
 						"Rule": "25371e6a508a61dbb9e3863e2f85c2599d5be0b53fb830282317596883b56e9f",
 						"Sink": "d4062c4dcc3c83c885f11bbaa3ac9620e1c7deb5fefff438254f75241dcc9251",
 						"Source": "c83481009907baf088ff8cbfcbe544e6116a7f4ffc4c78908794e6eaf3d57883",
-						"primaryLocationLineHash": "4420c9e06b3932a2b4115db8bc922aa738521afd4f6bdb670818c1b51e9141cc"
+						"primaryLocationLineHash": "d654d801c272edbb78c0150d8203939bfab8046e064852202b33e5b7889d0617"
 					}
 				},
 				{
@@ -88,7 +88,7 @@
 						{
 							"physicalLocation": {
 								"artifactLocation": {
-									"uri": "test/cidr1.yaml"
+									"uri": "test/cidr_one.yaml"
 								},
 								"region": {
 									"startLine": 3,
@@ -100,11 +100,11 @@
 						}
 					],
 					"partialFingerprints": {
-						"Document": "d0de5b9326cc0b56f207db2d0eae7ae622ef9077b02f3840e953c6d0c4839cad",
+						"Document": "81fc9c792a901d6276ac2f454457dcdf4b9c514b47c3b6cd3affbaa33310ae70",
 						"Rule": "1ea669e34fbe4c45580897c4acd417c6d41a39591d55e0fc417a9306f7ded0cd",
 						"Sink": "d4062c4dcc3c83c885f11bbaa3ac9620e1c7deb5fefff438254f75241dcc9251",
 						"Source": "c83481009907baf088ff8cbfcbe544e6116a7f4ffc4c78908794e6eaf3d57883",
-						"primaryLocationLineHash": "1c5e65b94a32edd496f50a9180d3e35b8c8bb93b732118beb4840a148a6a6f12"
+						"primaryLocationLineHash": "762fe1f38cbb3b54ff6dee592416b774ed2733eb634aa9383d02e219a5b9fe02"
 					}
 				},
 				{
@@ -116,7 +116,7 @@
 						{
 							"physicalLocation": {
 								"artifactLocation": {
-									"uri": "test/cidr1.yaml"
+									"uri": "test/cidr_one.yaml"
 								},
 								"region": {
 									"startLine": 3,
@@ -128,11 +128,11 @@
 						}
 					],
 					"partialFingerprints": {
-						"Document": "d0de5b9326cc0b56f207db2d0eae7ae622ef9077b02f3840e953c6d0c4839cad",
+						"Document": "81fc9c792a901d6276ac2f454457dcdf4b9c514b47c3b6cd3affbaa33310ae70",
 						"Rule": "8dcdcd7e9c48bf742b81a60e3c217c78d341a735211a8622b7112981f090961e",
 						"Sink": "d4062c4dcc3c83c885f11bbaa3ac9620e1c7deb5fefff438254f75241dcc9251",
 						"Source": "c83481009907baf088ff8cbfcbe544e6116a7f4ffc4c78908794e6eaf3d57883",
-						"primaryLocationLineHash": "b9ebc5ebd672d75e5a21422100c144e9c8bf2b9d3a93c099f819de0a55d63977"
+						"primaryLocationLineHash": "3a625cd0e44c1e2a0deb6c81f2f60a44cb4785e44c2e1ca0329eff2e978eb05a"
 					}
 				},
 				{
@@ -144,7 +144,7 @@
 						{
 							"physicalLocation": {
 								"artifactLocation": {
-									"uri": "test/cidr2.yaml"
+									"uri": "test/cidr_two.yaml"
 								},
 								"region": {
 									"startLine": 3,
@@ -156,11 +156,11 @@
 						}
 					],
 					"partialFingerprints": {
-						"Document": "bfd510c8494501320e48c07303e73e18bf25e6fd3144c728e7315e604c6e0094",
+						"Document": "7dc136c888e88d3497faf9afccf60e5e208f262ab4ae8ae1dc1fe676764a5dfc",
 						"Rule": "25371e6a508a61dbb9e3863e2f85c2599d5be0b53fb830282317596883b56e9f",
 						"Sink": "d4062c4dcc3c83c885f11bbaa3ac9620e1c7deb5fefff438254f75241dcc9251",
 						"Source": "c83481009907baf088ff8cbfcbe544e6116a7f4ffc4c78908794e6eaf3d57883",
-						"primaryLocationLineHash": "5847e680dcf65331154767f6ef3d4e1c10446bdc56450af2b3b7fd9ef76b2490"
+						"primaryLocationLineHash": "890bb1f8f81db3e21eade943ec16ded92387905dbeb1774eafffb287cb395fd3"
 					}
 				},
 				{
@@ -172,7 +172,7 @@
 						{
 							"physicalLocation": {
 								"artifactLocation": {
-									"uri": "test/cidr2.yaml"
+									"uri": "test/cidr_two.yaml"
 								},
 								"region": {
 									"startLine": 3,
@@ -184,11 +184,11 @@
 						}
 					],
 					"partialFingerprints": {
-						"Document": "bfd510c8494501320e48c07303e73e18bf25e6fd3144c728e7315e604c6e0094",
+						"Document": "7dc136c888e88d3497faf9afccf60e5e208f262ab4ae8ae1dc1fe676764a5dfc",
 						"Rule": "1ea669e34fbe4c45580897c4acd417c6d41a39591d55e0fc417a9306f7ded0cd",
 						"Sink": "d4062c4dcc3c83c885f11bbaa3ac9620e1c7deb5fefff438254f75241dcc9251",
 						"Source": "c83481009907baf088ff8cbfcbe544e6116a7f4ffc4c78908794e6eaf3d57883",
-						"primaryLocationLineHash": "030499bd124d78c1d8516b80b2d3aa2cc365b610e3834ca0ff463b0f70b0b214"
+						"primaryLocationLineHash": "dca4be9eee844b28bdde59fc770466e2c3583b7010b0f00b4a52b80147c1646b"
 					}
 				},
 				{
@@ -200,7 +200,7 @@
 						{
 							"physicalLocation": {
 								"artifactLocation": {
-									"uri": "test/cidr2.yaml"
+									"uri": "test/cidr_two.yaml"
 								},
 								"region": {
 									"startLine": 3,
@@ -212,11 +212,11 @@
 						}
 					],
 					"partialFingerprints": {
-						"Document": "bfd510c8494501320e48c07303e73e18bf25e6fd3144c728e7315e604c6e0094",
+						"Document": "7dc136c888e88d3497faf9afccf60e5e208f262ab4ae8ae1dc1fe676764a5dfc",
 						"Rule": "8dcdcd7e9c48bf742b81a60e3c217c78d341a735211a8622b7112981f090961e",
 						"Sink": "d4062c4dcc3c83c885f11bbaa3ac9620e1c7deb5fefff438254f75241dcc9251",
 						"Source": "c83481009907baf088ff8cbfcbe544e6116a7f4ffc4c78908794e6eaf3d57883",
-						"primaryLocationLineHash": "43c331fa896cb0c1da190291ca808ffbc046344575e2c773c9a860307acef4e0"
+						"primaryLocationLineHash": "3ffb5651b1c69bf51ecd51d21a654b9b1396afa399815f3925fecad6cf344a50"
 					}
 				}
 			]
