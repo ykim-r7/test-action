@@ -54,7 +54,7 @@
 				{
 					"ruleId": "rapid7.insights.cfn.aws.storage_container_not_enforcing_transit_encryption",
 					"message": {
-						"text": "Ensure all AWS::S3::Bucket resources have an attached AWS::S3::BucketPolicy with a statement that enforces transit encryption"
+						"text": "Storage Container Not Enforcing Transit Encryption"
 					},
 					"locations": [
 						{
@@ -82,7 +82,7 @@
 				{
 					"ruleId": "rapid7.insights.cfn.aws.storage_container_not_forcing_encrypted_uploads",
 					"message": {
-						"text": "Ensure all AWS::S3::Bucket resources have an attached AWS::S3::BucketPolicy with a statement that prevents file uploads that are not encrypted"
+						"text": "Storage Container Not Forcing Encrypted Uploads"
 					},
 					"locations": [
 						{
@@ -110,7 +110,7 @@
 				{
 					"ruleId": "rapid7.insights.cfn.aws.storage_container_with_no_permissions",
 					"message": {
-						"text": "Ensure all AWS::S3::Bucket resources have an attached AWS::S3::BucketPolicy"
+						"text": "Storage Container With No Permissions"
 					},
 					"locations": [
 						{
@@ -138,7 +138,7 @@
 				{
 					"ruleId": "rapid7.insights.cfn.aws.storage_container_not_enforcing_transit_encryption",
 					"message": {
-						"text": "Ensure all AWS::S3::Bucket resources have an attached AWS::S3::BucketPolicy with a statement that enforces transit encryption"
+						"text": "Storage Container Not Enforcing Transit Encryption"
 					},
 					"locations": [
 						{
@@ -166,7 +166,7 @@
 				{
 					"ruleId": "rapid7.insights.cfn.aws.storage_container_not_forcing_encrypted_uploads",
 					"message": {
-						"text": "Ensure all AWS::S3::Bucket resources have an attached AWS::S3::BucketPolicy with a statement that prevents file uploads that are not encrypted"
+						"text": "Storage Container Not Forcing Encrypted Uploads"
 					},
 					"locations": [
 						{
@@ -194,7 +194,7 @@
 				{
 					"ruleId": "rapid7.insights.cfn.aws.storage_container_with_no_permissions",
 					"message": {
-						"text": "Ensure all AWS::S3::Bucket resources have an attached AWS::S3::BucketPolicy"
+						"text": "Storage Container With No Permissions"
 					},
 					"locations": [
 						{
