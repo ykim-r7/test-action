@@ -12,7 +12,7 @@
 							"id": "rapid7.insights.cfn.aws.storage_container_not_enforcing_transit_encryption",
 							"name": "Storage Container Not Enforcing Transit Encryption",
 							"shortDescription": {
-								"text": "Find storage containers that do not require secure transfer over HTTPS."
+								"text": "Storage Container Not Enforcing Transit Encryption"
 							},
 							"fullDescription": {
 								"text": "Find storage containers that do not require secure transfer over HTTPS."
@@ -25,7 +25,7 @@
 							"id": "rapid7.insights.cfn.aws.storage_container_not_forcing_encrypted_uploads",
 							"name": "Storage Container Not Forcing Encrypted Uploads",
 							"shortDescription": {
-								"text": "Identify storage containers, e.g., AWS S3 buckets, without object encryption enabled"
+								"text": "Storage Container Not Forcing Encrypted Uploads"
 							},
 							"fullDescription": {
 								"text": "Identify storage containers, e.g., AWS S3 buckets, without object encryption enabled"
@@ -38,7 +38,7 @@
 							"id": "rapid7.insights.cfn.aws.storage_container_with_no_permissions",
 							"name": "Storage Container With No Permissions",
 							"shortDescription": {
-								"text": "Identify storage containers, e.g., AWS S3 buckets, without any permissions which will not be accessible"
+								"text": "Storage Container With No Permissions"
 							},
 							"fullDescription": {
 								"text": "Identify storage containers, e.g., AWS S3 buckets, without any permissions which will not be accessible"
