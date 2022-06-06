@@ -1,0 +1,264 @@
+{
+	"version": "2.1.0",
+	"$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+	"runs": [
+		{
+			"tool": {
+				"driver": {
+					"name": "Titan",
+					"version": "development",
+					"rules": [
+						{
+							"id": "rapid7.insights.cfn.aws.storage_container_with_no_permissions",
+							"name": "Storage Container With No Permissions",
+							"shortDescription": {
+								"text": "Identify storage containers, e.g., AWS S3 buckets, without any permissions which will not be accessible"
+							},
+							"fullDescription": {
+								"text": "Identify storage containers, e.g., AWS S3 buckets, without any permissions which will not be accessible"
+							},
+							"help": {
+								"text": "Ensure all AWS::S3::Bucket resources have an attached AWS::S3::BucketPolicy"
+							}
+						},
+						{
+							"id": "rapid7.insights.cfn.aws.storage_container_with_no_permissions",
+							"name": "Storage Container With No Permissions",
+							"shortDescription": {
+								"text": "Identify storage containers, e.g., AWS S3 buckets, without any permissions which will not be accessible"
+							},
+							"fullDescription": {
+								"text": "Identify storage containers, e.g., AWS S3 buckets, without any permissions which will not be accessible"
+							},
+							"help": {
+								"text": "Ensure all AWS::S3::Bucket resources have an attached AWS::S3::BucketPolicy"
+							}
+						},
+						{
+							"id": "rapid7.insights.cfn.aws.storage_container_with_no_permissions",
+							"name": "Storage Container With No Permissions",
+							"shortDescription": {
+								"text": "Identify storage containers, e.g., AWS S3 buckets, without any permissions which will not be accessible"
+							},
+							"fullDescription": {
+								"text": "Identify storage containers, e.g., AWS S3 buckets, without any permissions which will not be accessible"
+							},
+							"help": {
+								"text": "Ensure all AWS::S3::Bucket resources have an attached AWS::S3::BucketPolicy"
+							}
+						},
+						{
+							"id": "rapid7.insights.cfn.aws.storage_container_with_no_permissions",
+							"name": "Storage Container With No Permissions",
+							"shortDescription": {
+								"text": "Identify storage containers, e.g., AWS S3 buckets, without any permissions which will not be accessible"
+							},
+							"fullDescription": {
+								"text": "Identify storage containers, e.g., AWS S3 buckets, without any permissions which will not be accessible"
+							},
+							"help": {
+								"text": "Ensure all AWS::S3::Bucket resources have an attached AWS::S3::BucketPolicy"
+							}
+						},
+						{
+							"id": "rapid7.insights.cfn.aws.storage_container_with_no_permissions",
+							"name": "Storage Container With No Permissions",
+							"shortDescription": {
+								"text": "Identify storage containers, e.g., AWS S3 buckets, without any permissions which will not be accessible"
+							},
+							"fullDescription": {
+								"text": "Identify storage containers, e.g., AWS S3 buckets, without any permissions which will not be accessible"
+							},
+							"help": {
+								"text": "Ensure all AWS::S3::Bucket resources have an attached AWS::S3::BucketPolicy"
+							}
+						},
+						{
+							"id": "rapid7.insights.cfn.aws.storage_container_with_no_permissions",
+							"name": "Storage Container With No Permissions",
+							"shortDescription": {
+								"text": "Identify storage containers, e.g., AWS S3 buckets, without any permissions which will not be accessible"
+							},
+							"fullDescription": {
+								"text": "Identify storage containers, e.g., AWS S3 buckets, without any permissions which will not be accessible"
+							},
+							"help": {
+								"text": "Ensure all AWS::S3::Bucket resources have an attached AWS::S3::BucketPolicy"
+							}
+						}
+					]
+				}
+			},
+			"results": [
+				{
+					"ruleId": "rapid7.insights.cfn.aws.storage_container_with_no_permissions",
+					"message": {
+						"markdown": "```javascript\nmap[Properties:map[Bucket:Bucket PolicyDocument:map[Statement:[map[Action:s3:* Condition:map[Bool:map[aws:SecureTransport:false]] Effect:Deny Principal:* Resource:[map[Fn::GetAtt:[Bucket Arn]] map[Fn::Sub:${Bucket.Arn}/*]]]] Version:2012-10-17]] Type:AWS::S3::BucketPolicy]\n```"
+					},
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "test/test_cidr.yaml"
+								},
+								"region": {
+									"startLine": 3,
+									"startColumn": 1,
+									"endLine": 6,
+									"endColumn": 26
+								}
+							}
+						}
+					],
+					"partialFingerprints": {
+						"Document": "65ed1e391fdbe4f47fbd59c23f67975062a33ae137c18fea5fb83ee1e9dc7eb5",
+						"Rule": "25371e6a508a61dbb9e3863e2f85c2599d5be0b53fb830282317596883b56e9f",
+						"Sink": "d4062c4dcc3c83c885f11bbaa3ac9620e1c7deb5fefff438254f75241dcc9251",
+						"Source": "c83481009907baf088ff8cbfcbe544e6116a7f4ffc4c78908794e6eaf3d57883",
+						"primaryLocationLineHash": "c7a07e82835709cde9ca5de98245219eece9413a95f745d3b747ed3f475c8072"
+					}
+				},
+				{
+					"ruleId": "rapid7.insights.cfn.aws.storage_container_with_no_permissions",
+					"message": {
+						"markdown": "```javascript\nmap[Properties:map[Bucket:Bucket PolicyDocument:map[Statement:[map[Action:s3:PutObject Condition:map[Null:map[s3:x-amz-server-side-encryption:true]] Effect:Deny Principal:* Resource:[map[Fn::Sub:${Bucket.Arn}/*]]]] Version:2012-10-17]] Type:AWS::S3::BucketPolicy]\n```"
+					},
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "test/test_cidr.yaml"
+								},
+								"region": {
+									"startLine": 3,
+									"startColumn": 1,
+									"endLine": 6,
+									"endColumn": 26
+								}
+							}
+						}
+					],
+					"partialFingerprints": {
+						"Document": "65ed1e391fdbe4f47fbd59c23f67975062a33ae137c18fea5fb83ee1e9dc7eb5",
+						"Rule": "1ea669e34fbe4c45580897c4acd417c6d41a39591d55e0fc417a9306f7ded0cd",
+						"Sink": "d4062c4dcc3c83c885f11bbaa3ac9620e1c7deb5fefff438254f75241dcc9251",
+						"Source": "c83481009907baf088ff8cbfcbe544e6116a7f4ffc4c78908794e6eaf3d57883",
+						"primaryLocationLineHash": "8c95abbd1d2b3079a83ee11ec6b1f5cb8147271de9e5e23b69fa2cc883b75c24"
+					}
+				},
+				{
+					"ruleId": "rapid7.insights.cfn.aws.storage_container_with_no_permissions",
+					"message": {
+						"markdown": "```javascript\nmap[Properties:map[Bucket:Bucket PolicyDocument:map[Statement:[map[Action:s3:* Condition:map[Bool:map[aws:SecureTransport:false]] Effect:Deny Principal:* Resource:[!GetAtt Bucket.Arn !Sub '${Bucket.Arn}/*']] map[Action:s3:PutObject Condition:map[Null:map[s3:x-amz-server-side-encryption:true]] Effect:Deny Principal:* Resource:[map[Fn::Sub:${Bucket.Arn}/*]]]] Version:2012-10-17]] Type:AWS::S3::BucketPolicy]\n```"
+					},
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "test/test_cidr.yaml"
+								},
+								"region": {
+									"startLine": 3,
+									"startColumn": 1,
+									"endLine": 6,
+									"endColumn": 26
+								}
+							}
+						}
+					],
+					"partialFingerprints": {
+						"Document": "65ed1e391fdbe4f47fbd59c23f67975062a33ae137c18fea5fb83ee1e9dc7eb5",
+						"Rule": "8dcdcd7e9c48bf742b81a60e3c217c78d341a735211a8622b7112981f090961e",
+						"Sink": "d4062c4dcc3c83c885f11bbaa3ac9620e1c7deb5fefff438254f75241dcc9251",
+						"Source": "c83481009907baf088ff8cbfcbe544e6116a7f4ffc4c78908794e6eaf3d57883",
+						"primaryLocationLineHash": "ace6403e1758a3dcb93b793c9612afb21a36af547159934f1d63efaf5ae53ac3"
+					}
+				},
+				{
+					"ruleId": "rapid7.insights.cfn.aws.storage_container_with_no_permissions",
+					"message": {
+						"markdown": "```javascript\nmap[Properties:map[Bucket:Bucket PolicyDocument:map[Statement:[map[Action:s3:* Condition:map[Bool:map[aws:SecureTransport:false]] Effect:Deny Principal:* Resource:[map[Fn::GetAtt:[Bucket Arn]] map[Fn::Sub:${Bucket.Arn}/*]]]] Version:2012-10-17]] Type:AWS::S3::BucketPolicy]\n```"
+					},
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "test/test_cidr2.yaml"
+								},
+								"region": {
+									"startLine": 3,
+									"startColumn": 1,
+									"endLine": 6,
+									"endColumn": 26
+								}
+							}
+						}
+					],
+					"partialFingerprints": {
+						"Document": "a747a6201e7ba6aac4075a0fcd520fed73080d1e6961a4f70fc639d842cf3060",
+						"Rule": "25371e6a508a61dbb9e3863e2f85c2599d5be0b53fb830282317596883b56e9f",
+						"Sink": "d4062c4dcc3c83c885f11bbaa3ac9620e1c7deb5fefff438254f75241dcc9251",
+						"Source": "c83481009907baf088ff8cbfcbe544e6116a7f4ffc4c78908794e6eaf3d57883",
+						"primaryLocationLineHash": "eddf7ab613a1fbed1d3b83ee0027a9a6d7947f22de7220cbe60990684c531439"
+					}
+				},
+				{
+					"ruleId": "rapid7.insights.cfn.aws.storage_container_with_no_permissions",
+					"message": {
+						"markdown": "```javascript\nmap[Properties:map[Bucket:Bucket PolicyDocument:map[Statement:[map[Action:s3:PutObject Condition:map[Null:map[s3:x-amz-server-side-encryption:true]] Effect:Deny Principal:* Resource:[map[Fn::Sub:${Bucket.Arn}/*]]]] Version:2012-10-17]] Type:AWS::S3::BucketPolicy]\n```"
+					},
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "test/test_cidr2.yaml"
+								},
+								"region": {
+									"startLine": 3,
+									"startColumn": 1,
+									"endLine": 6,
+									"endColumn": 26
+								}
+							}
+						}
+					],
+					"partialFingerprints": {
+						"Document": "a747a6201e7ba6aac4075a0fcd520fed73080d1e6961a4f70fc639d842cf3060",
+						"Rule": "1ea669e34fbe4c45580897c4acd417c6d41a39591d55e0fc417a9306f7ded0cd",
+						"Sink": "d4062c4dcc3c83c885f11bbaa3ac9620e1c7deb5fefff438254f75241dcc9251",
+						"Source": "c83481009907baf088ff8cbfcbe544e6116a7f4ffc4c78908794e6eaf3d57883",
+						"primaryLocationLineHash": "32ba32aedb8e83f46b912e517100e42ea874e842b37186d314a197e8f8ae76f6"
+					}
+				},
+				{
+					"ruleId": "rapid7.insights.cfn.aws.storage_container_with_no_permissions",
+					"message": {
+						"markdown": "```javascript\nmap[Properties:map[Bucket:Bucket PolicyDocument:map[Statement:[map[Action:s3:* Condition:map[Bool:map[aws:SecureTransport:false]] Effect:Deny Principal:* Resource:[!GetAtt Bucket.Arn !Sub '${Bucket.Arn}/*']] map[Action:s3:PutObject Condition:map[Null:map[s3:x-amz-server-side-encryption:true]] Effect:Deny Principal:* Resource:[map[Fn::Sub:${Bucket.Arn}/*]]]] Version:2012-10-17]] Type:AWS::S3::BucketPolicy]\n```"
+					},
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "test/test_cidr2.yaml"
+								},
+								"region": {
+									"startLine": 3,
+									"startColumn": 1,
+									"endLine": 6,
+									"endColumn": 26
+								}
+							}
+						}
+					],
+					"partialFingerprints": {
+						"Document": "a747a6201e7ba6aac4075a0fcd520fed73080d1e6961a4f70fc639d842cf3060",
+						"Rule": "8dcdcd7e9c48bf742b81a60e3c217c78d341a735211a8622b7112981f090961e",
+						"Sink": "d4062c4dcc3c83c885f11bbaa3ac9620e1c7deb5fefff438254f75241dcc9251",
+						"Source": "c83481009907baf088ff8cbfcbe544e6116a7f4ffc4c78908794e6eaf3d57883",
+						"primaryLocationLineHash": "10886c8aaa1549fab70949870621a5257cfdcb6ae2043016c3264154ee5cba8f"
+					}
+				}
+			]
+		}
+	]
+}
