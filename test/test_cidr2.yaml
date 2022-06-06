@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Resources:
+
+  Bucket:
+    Type: AWS::S3::Bucket
+
+Outputs:
+  
+  Block1:
+    Value: !Select 
+        - 0
+        - Fn::Cidr: 
+          - 10.0.0.0/16
+          - 3
+          - 8
+
+  Block2:
+    Value: !Select 
+        - 1
+        - Fn::Cidr: 
+          - 10.0.0.0/16
+          - 3
+          - 8
+
+  Block3:
+    Value: !Select 
+        - 2
+        - Fn::Cidr: 
+          - 10.0.0.0/16
+          - 3
+          - 8
