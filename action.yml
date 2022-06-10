@@ -1,5 +1,5 @@
 # action.yml
-name: 'Mimics Scan'
+name: 'mimICS Scan'
 inputs:
   base_url:
     required: true
@@ -7,20 +7,24 @@ inputs:
     required: true
   targets:
     required: true
+  config_name:
+    required: true
+  scan_name:
+    required: true
   args:
     required: false
 outputs:
   stdout:
-    description: "result of mimics command"
+    description: "result of mimICS command"
 runs:
   using: 'docker'
-  image: "Dockerfile"
+  image: "mimicsdemo.azurecr.io/mimics:demo"
   env:
     MIMICS_BASE_URL: ${{ inputs.BASE_URL }}
     MIMICS_API_KEY: ${{ inputs.API_KEY }}
   args:
     - ${{ inputs.targets }}
-    - -c 'Storage Container Without Server Side Encryption Enabled'
-    - -s 'Github Actions Demo'
+    - -c ${{ inputs.config_name }}
+    - -s ${{ inputs.scan_name }}
     - --report-formats sarif
     - --no-progress
