@@ -27,4 +27,6 @@ runs:
     - ${{ inputs.targets }}
     - -c${{ inputs.config_name }}
     - -s${{ inputs.scan_name }}
+    - --report-formats
+    - sarif
     - --no-progress
