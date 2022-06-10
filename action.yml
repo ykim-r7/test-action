@@ -25,5 +25,5 @@ runs:
   args:
     - scan
     - ${{ inputs.targets }}
-    - -c 'AWS CIS Benchmark 1.4'
+    - -c AWS CIS Benchmark 1.4
     - -s '${{ inputs.scan_name }}'
