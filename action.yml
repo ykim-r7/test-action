@@ -18,7 +18,7 @@ outputs:
     description: "result of mimICS command"
 runs:
   using: 'docker'
-  image: "mimicsdemo.azurecr.io/mimics:demo"
+  image: "docker://mimicsdemo.azurecr.io/mimics:demo"
   env:
     MIMICS_BASE_URL: ${{ inputs.BASE_URL }}
     MIMICS_API_KEY: ${{ inputs.API_KEY }}
