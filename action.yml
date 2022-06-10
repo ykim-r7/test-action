@@ -23,6 +23,7 @@ runs:
     MIMICS_BASE_URL: ${{ inputs.BASE_URL }}
     MIMICS_API_KEY: ${{ inputs.API_KEY }}
   args:
+    - scan
     - ${{ inputs.targets }}
     - -c ${{ inputs.config_name }}
     - -s ${{ inputs.scan_name }}
