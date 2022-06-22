@@ -29,7 +29,7 @@ runs:
     MIMICS_API_KEY: ${{ inputs.API_KEY }}
   args:
     - scan
-    - ${{ inputs.targets }}
+    - ${{ inputs.args }}
     - -c
     - ${{ inputs.config_name }}
     - -s
