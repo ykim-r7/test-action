@@ -1,7 +1,7 @@
 name: Rapid7 mimICS Scan
 author: Yvonne Kim
 description: >
-  Scans files with mimICS and saves results to disk.
+  Scans file with mimICS and saves results to disk.
 inputs:
   base_url:
     description: URL of ICS server
@@ -16,14 +16,14 @@ inputs:
     description: Name of configuration to run scan with
     required: true
   scan_name:
-    description: Name of this scan run
+    description: Name of this scan
     required: true
 outputs:
   stdout:
-    description: "Result of mimICS command"
+    description: Output of mimICS command
 runs:
-  using: 'docker'
-  image: "docker://mimicsdemo.azurecr.io/mimics:demo"
+  using: docker
+  image: docker://public.ecr.aws/rapid7-insightcloudsec/ics/mimics:v0.1
   env:
     MIMICS_BASE_URL: ${{ inputs.BASE_URL }}
     MIMICS_API_KEY: ${{ inputs.API_KEY }}
