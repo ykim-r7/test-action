@@ -1,5 +1,5 @@
-name: Rapid7 mimICS Scan
-author: Yvonne Kim
+name: insightCloudSec Scan
+author: Rapid7
 description: >
   Scans file with mimICS and saves results to disk.
 inputs:
@@ -25,8 +25,8 @@ runs:
   using: docker
   image: docker://public.ecr.aws/rapid7-insightcloudsec/ics/mimics:v0.1
   env:
-    MIMICS_BASE_URL: ${{ inputs.BASE_URL }}
-    MIMICS_API_KEY: ${{ inputs.API_KEY }}
+    MIMICS_BASE_URL: ${{ inputs.ICS_BASE_URL }}
+    MIMICS_API_KEY: ${{ inputs.ICS_API_KEY }}
   args:
     - scan
     - ${{ inputs.target }}
