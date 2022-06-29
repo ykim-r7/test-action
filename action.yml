@@ -1,7 +1,7 @@
 name: insightCloudSec Scan
 author: Rapid7
 description: >
-  Scans file with mimICS and saves results to disk.
+  Scans a cloudformation template and saves results to disk.
 inputs:
   base_url:
     description: URL of ICS server
@@ -20,13 +20,13 @@ inputs:
     required: true
 outputs:
   stdout:
-    description: Output of mimICS command
+    description: Output of the mimics scan command
 runs:
   using: docker
   image: docker://public.ecr.aws/rapid7-insightcloudsec/ics/mimics:v0.1
   env:
-    MIMICS_BASE_URL: ${{ inputs.BASE_URL }}
-    MIMICS_API_KEY: ${{ inputs.API_KEY }}
+    MIMICS_BASE_URL: ${{ inputs.base_url }}
+    MIMICS_API_KEY: ${{ inputs.api_key }}
   args:
     - scan
     - ${{ inputs.target }}
